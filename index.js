@@ -5,14 +5,18 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require("socket.io")(server, {
     cors: { 
-        origin: process.env.ORIGIN 
+        origin: process.env.ORIGIN || '*'
     }
 });
 
-const port = process.env.PORT
+const port = process.env.PORT || 8080
 
 var clientsWaiting = []
 var clientsConnected = []
+
+app.get('/', (req, res) => {
+    res.send('Teste Realizado!')
+})
 
 io.on('connection', (client) => {
     clientsWaiting.push(client.id)
