@@ -1,6 +1,8 @@
 class Chat {
+
     clients = []
     hash = ''
+
     constructor(clients, io) {
         this.clients = clients
         this.createConnection(clients)
@@ -12,5 +14,14 @@ class Chat {
         this.hash = hash
         clients[0].join(hash)
         clients[1].join(hash)
+        io.on('msg', () => {
+            
+        })
+    }
+
+    destroyConnection() {
+        clients[0].leave(hash)
+        clients[1].leave(hash)
+        return this.clients
     }
 }
