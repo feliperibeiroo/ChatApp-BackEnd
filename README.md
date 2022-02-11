@@ -17,4 +17,4 @@ A aplicação de chat cria um websocket com o servidor e aguarda outros usuário
 
 ## Captura de Tela
 
-![Captura de Tela da Aplicação](/static/captura-app.png)
+![Captura de Tela da Aplicação](/captura-app.png)
